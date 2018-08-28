@@ -719,6 +719,192 @@ paths:
       - DeviceId
       - State
       - LogicalInterfaceId
+    patch:
+      summary: Perform an operation against the device state for a logical interface
+      description: |-
+        Performs the specified operation against the device state for a logical
+        interface. The following values can be specified for the operation
+        property:
+
+          - reset-state
+
+        The **reset-state** operation will reset the state of the specified
+        device to the default values as defined by the schema for the logical
+        interface.
+      operationId: performs-the-specified-operation-against-the-device-state-for-a-logicalinterface-the-following-value
+      x-api-path-slug: devicetypestypeiddevicesdeviceidstatelogicalinterfaceid-patch
+      parameters:
+      - in: query
+        name: No Name
+      - in: body
+        name: Operation
+        description: The JSON representation of an operation
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Device
+      - Types
+      - Devices
+      - DeviceId
+      - State
+      - LogicalInterfaceId
+  /thing/types/{thingTypeId}/mappings/{logicalInterfaceId}:
+    get:
+      summary: |-
+        Get the active property mappings for a specific logical interface for
+        a thing type.
+      description: |-
+        Retrieves the active property mappings for a specific logical interface
+        for the thing type.
+      operationId: retrieves-the-active-property-mappings-for-a-specific-logical-interfacefor-the-thing-type
+      x-api-path-slug: thingtypesthingtypeidmappingslogicalinterfaceid-get
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Thing
+      - Types
+      - ThingTypeId
+      - Mappings
+      - LogicalInterfaceId
+  /draft/thing/types/{thingTypeId}/mappings/{logicalInterfaceId}:
+    get:
+      summary: |-
+        Get the draft property mappings for a specific logical interface for
+        a thing type.
+      description: |-
+        Retrieves the draft property mappings for a specific logical interface
+        for the thing type.
+      operationId: retrieves-the-draft-property-mappings-for-a-specific-logical-interfacefor-the-thing-type
+      x-api-path-slug: draftthingtypesthingtypeidmappingslogicalinterfaceid-get
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Draft
+      - Thing
+      - Types
+      - ThingTypeId
+      - Mappings
+      - LogicalInterfaceId
+    put:
+      summary: |-
+        Update the property mappings for a specific logical interface for
+        the thing type.
+      description: |-
+        Updates the property mappings for a specific logical interface
+        for the draft thing type.
+      operationId: updates-the-property-mappings-for-a-specific-logical-interfacefor-the-draft-thing-type
+      x-api-path-slug: draftthingtypesthingtypeidmappingslogicalinterfaceid-put
+      parameters:
+      - in: query
+        name: No Name
+      - in: body
+        name: Thing Type Property Mappings
+        description: The JSON representation of the thing type property mappings
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Draft
+      - Thing
+      - Types
+      - ThingTypeId
+      - Mappings
+      - LogicalInterfaceId
+    delete:
+      summary: |-
+        Delete the property mappings for a specific logical interface for
+        the draft thing type.
+      description: |-
+        Deletes the property mappings for a specific logical interface
+        for the draft thing type.
+      operationId: deletes-the-property-mappings-for-a-specific-logical-interfacefor-the-draft-thing-type
+      x-api-path-slug: draftthingtypesthingtypeidmappingslogicalinterfaceid-delete
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Draft
+      - Thing
+      - Types
+      - ThingTypeId
+      - Mappings
+      - LogicalInterfaceId
+  /thing/types/{thingTypeId}/things/{thingId}/state/{logicalInterfaceId}:
+    get:
+      summary: Get the state for the thing with the specified id
+      description: Retrieve the current state of the thing with the specified id.
+      operationId: retrieve-the-current-state-of-the-thing-with-the-specified-id
+      x-api-path-slug: thingtypesthingtypeidthingsthingidstatelogicalinterfaceid-get
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Thing
+      - Types
+      - ThingTypeId
+      - Things
+      - ThingId
+      - State
+      - LogicalInterfaceId
+    patch:
+      summary: Perform an operation against the thing state for a logical interface
+      description: |-
+        Performs the specified operation against the thing state for a logical
+        interface. The following values can be specified for the operation
+        property:
+
+          - reset-state
+
+        The **reset-state** operation will reset the state of the specified
+        thing instance to the default values as defined by the schema for the
+        logical interface.
+      operationId: performs-the-specified-operation-against-the-thing-state-for-a-logicalinterface-the-following-values
+      x-api-path-slug: thingtypesthingtypeidthingsthingidstatelogicalinterfaceid-patch
+      parameters:
+      - in: query
+        name: No Name
+      - in: body
+        name: Operation
+        description: The JSON representation of an operation
+        schema:
+          $ref: '#/definitions/holder'
+      responses:
+        200:
+          description: OK
+      tags:
+      - Internet of Things
+      - Thing
+      - Types
+      - ThingTypeId
+      - Things
+      - ThingId
+      - State
+      - LogicalInterfaceId
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
